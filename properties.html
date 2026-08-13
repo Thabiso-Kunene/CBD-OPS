@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>Properties | CBD OPS</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&family=Poppins:wght@500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+
+<body>
+
+
+<header class="site-header">
+
+    <nav class="navbar container">
+
+        <a class="brand" href="index.html">
+
+            <img
+                src="Logo.png"
+                alt="CBD OPS Logo">
+
+            <span>
+                CBD <b>OPS</b>
+            </span>
+
+        </a>
+
+
+        <button class="menu-toggle">
+            ☰
+        </button>
+
+
+        <ul class="nav-links">
+
+            <li>
+                <a href="index.html">
+                    Home
+                </a>
+            </li>
+
+            <li>
+                <a class="active" href="properties.html">
+                    Properties
+                </a>
+            </li>
+
+            <li>
+                <a href="about.html">
+                    About Us
+                </a>
+            </li>
+
+            <li>
+                <a href="contact.html">
+                    Contact
+                </a>
+            </li>
+
+        </ul>
+
+
+        <a
+            class="btn btn-gold nav-btn"
+            href="contact.html">
+
+            List Your Property
+
+        </a>
+
+    </nav>
+
+</header>
+
+
+<main>
+
+
+<section class="page-hero">
+
+    <div class="container">
+
+        <p class="eyebrow gold-text">
+            PROPERTY COLLECTION
+        </p>
+
+        <h1>
+            Explore Properties
+        </h1>
+
+        <p>
+            Search homes, apartments, accommodation
+            and commercial spaces.
+        </p>
+
+    </div>
+
+</section>
+
+
+<section class="section container">
+
+
+<!-- FILTER -->
+
+<form
+    id="propertyFilters"
+    class="filter-box">
+
+
+    <label>
+
+        Search location
+
+        <input
+            id="filterLocation"
+            type="text"
+            placeholder="e.g. Durban">
+
+    </label>
+
+
+    <label>
+
+        Type
+
+        <select id="filterType">
+
+            <option value="">
+                All types
+            </option>
+
+            <option>
+                House
+            </option>
+
+            <option>
+                Apartment
+            </option>
+
+            <option>
+                Student Accommodation
+            </option>
+
+            <option>
+                Office
+            </option>
+
+            <option>
+                Commercial
+            </option>
+
+        </select>
+
+    </label>
+
+
+    <label>
+
+        Bedrooms
+
+        <select id="filterBedrooms">
+
+            <option value="">
+                Any
+            </option>
+
+            <option>
+                1+
+            </option>
+
+            <option>
+                2+
+            </option>
+
+            <option>
+                3+
+            </option>
+
+            <option>
+                4+
+            </option>
+
+        </select>
+
+    </label>
+
+
+    <label>
+
+        Status
+
+        <select id="filterStatus">
+
+            <option value="">
+                All
+            </option>
+
+            <option>
+                Sale
+            </option>
+
+            <option>
+                Rent
+            </option>
+
+        </select>
+
+    </label>
+
+
+    <button
+        class="btn btn-dark"
+        type="submit">
+
+        Apply Filters
+
+    </button>
+
+
+</form>
+
+
+<p
+    id="resultCount"
+    class="result-count">
+</p>
+
+
+<!-- SALE -->
+
+<div
+    class="section-heading"
+    id="sale">
+
+    <div>
+
+        <p class="eyebrow gold-text">
+            FOR SALE
+        </p>
+
+        <h2>
+            Properties for Sale
+        </h2>
+
+    </div>
+
+</div>
+
+
+<div class="property-grid filter-results">
+
+
+<!-- SALE PROPERTY 1 -->
+
+<article
+    class="property-card searchable"
+    data-location="durban"
+    data-type="house"
+    data-bedrooms="4"
+    data-status="sale">
+
+
+    <div class="property-image">
+
+        <img
+            src="Front house 2.jpg"
+            alt="Modern family home">
+
+        <span class="badge">
+            For Sale
+        </span>
+
+    </div>
+
+
+    <div class="property-body">
+
+        <p class="location">
+            📍 Durban, KwaZulu-Natal
+        </p>
+
+        <h3>
+            Modern Family Home
+        </h3>
+
+        <p class="property-price">
+            R1,850,000
+        </p>
+
+        <div class="features">
+
+            <span>
+                🛏 4 Beds
+            </span>
+
+            <span>
+                🚿 3 Baths
+            </span>
+
+            <span>
+                ⌂ 2 Garage
+            </span>
+
+        </div>
+
+
+        <a
+            class="btn btn-dark full"
+            href="property-details.html">
+
+            View Details
+
+        </a>
+
+    </div>
+
+</article>
+
+
+<!-- SALE PROPERTY 2 -->
+
+<article
+    class="property-card searchable"
+    data-location="ballito"
+    data-type="house"
+    data-bedrooms="3"
+    data-status="sale">
+
+
+    <div class="property-image">
+
+        <img
+            src="Backyard 2.jpeg"
+            alt="Coastal home">
+
+        <span class="badge">
+            For Sale
+        </span>
+
+    </div>
+
+
+    <div class="property-body">
+
+        <p class="location">
+            📍 Ballito, KwaZulu-Natal
+        </p>
+
+        <h3>
+            Contemporary Coastal Home
+        </h3>
+
+        <p class="property-price">
+            R2,450,000
+        </p>
+
+        <div class="features">
+
+            <span>
+                🛏 3 Beds
+            </span>
+
+            <span>
+                🚿 2 Baths
+            </span>
+
+            <span>
+                ⌂ 2 Garage
+            </span>
+
+        </div>
+
+
+        <a
+            class="btn btn-dark full"
+            href="property-details.html">
+
+            View Details
+
+        </a>
+
+    </div>
+
+</article>
+
+
+</div>
+
+
+<!-- RENT -->
+
+<div
+    class="section-heading rent-heading"
+    id="rent">
+
+    <div>
+
+        <p class="eyebrow gold-text">
+            FOR RENT
+        </p>
+
+        <h2>
+            Rental Properties
+        </h2>
+
+    </div>
+
+</div>
+
+
+<div class="property-grid filter-results">
+
+
+<!-- RENT PROPERTY 1 -->
+
+<article
+    class="property-card searchable"
+    data-location="umhlanga"
+    data-type="house"
+    data-bedrooms="4"
+    data-status="rent">
+
+
+    <div class="property-image">
+
+        <img
+            src="int 4 bedroom.jpg"
+            alt="Luxury four bedroom property">
+
+        <span class="badge rent">
+            For Rent
+        </span>
+
+    </div>
+
+
+    <div class="property-body">
+
+        <p class="location">
+            📍 Umhlanga, KwaZulu-Natal
+        </p>
+
+        <h3>
+            Luxury Four Bedroom
+        </h3>
+
+        <p class="property-price">
+            R18,500
+            <small>/ month</small>
+        </p>
+
+        <div class="features">
+
+            <span>
+                🛏 4 Beds
+            </span>
+
+            <span>
+                🚿 3 Baths
+            </span>
+
+            <span>
+                ⌂ 2 Garage
+            </span>
+
+        </div>
+
+
+        <a
+            class="btn btn-dark full"
+            href="property-details.html">
+
+            View Details
+
+        </a>
+
+    </div>
+
+</article>
+
+
+<!-- RENT PROPERTY 2 -->
+
+<article
+    class="property-card searchable"
+    data-location="durban"
+    data-type="apartment"
+    data-bedrooms="2"
+    data-status="rent">
+
+
+    <div class="property-image">
+
+        <img
+            src="int2.jpg"
+            alt="Modern apartment interior">
+
+        <span class="badge rent">
+            For Rent
+        </span>
+
+    </div>
+
+
+    <div class="property-body">
+
+        <p class="location">
+            📍 Durban, KwaZulu-Natal
+        </p>
+
+        <h3>
+            Modern City Apartment
+        </h3>
+
+        <p class="property-price">
+            R11,500
+            <small>/ month</small>
+        </p>
+
+        <div class="features">
+
+            <span>
+                🛏 2 Beds
+            </span>
+
+            <span>
+                🚿 2 Baths
+            </span>
+
+            <span>
+                ⌂ 1 Parking
+            </span>
+
+        </div>
+
+
+        <a
+            class="btn btn-dark full"
+            href="property-details.html">
+
+            View Details
+
+        </a>
+
+    </div>
+
+</article>
+
+
+</div>
+
+</section>
+
+</main>
+
+
+<footer class="footer">
+
+    <div class="container footer-grid">
+
+        <div>
+
+            <a
+                class="brand footer-brand"
+                href="index.html">
+
+                <img
+                    src="Logo.png"
+                    alt="CBD OPS Logo">
+
+                <span>
+                    CBD <b>OPS</b>
+                </span>
+
+            </a>
+
+            <p>
+                Find your dream property with confidence.
+            </p>
+
+        </div>
+
+
+        <div>
+
+            <h4>
+                Quick Links
+            </h4>
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="properties.html">
+                Properties
+            </a>
+
+            <a href="about.html">
+                About Us
+            </a>
+
+            <a href="contact.html">
+                Contact
+            </a>
+
+        </div>
+
+
+        <div>
+
+            <h4>
+                Property
+            </h4>
+
+            <a href="#sale">
+                For Sale
+            </a>
+
+            <a href="#rent">
+                For Rent
+            </a>
+
+            <a href="contact.html">
+                List Your Property
+            </a>
+
+        </div>
+
+
+        <div>
+
+            <h4>
+                Contact
+            </h4>
+
+            <p>
+                📍 South Africa
+            </p>
+
+            <p>
+                📞 +27 81 460 2421
+            </p>
+
+            <p>
+                ✉ info@cbdops.co.za
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="copyright">
+
+        © 2026 CBD OPS. All rights reserved.
+
+    </div>
+
+</footer>
+
+
+<script src="js/script.js"></script>
+
+</body>
+
+</html>
