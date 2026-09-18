@@ -10,6 +10,7 @@
 
     <title>CBD OPS | Find Your Dream Property</title>
 
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
@@ -17,45 +18,75 @@
         href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&family=Poppins:wght@500;600;700;800&display=swap"
         rel="stylesheet">
 
+    <!-- Main CSS -->
     <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
 
-    <!-- NAVIGATION -->
+    <!-- ===============================
+         NAVIGATION
+    ================================ -->
     <header class="site-header">
 
         <nav class="navbar container">
 
+            <!-- LOGO -->
             <a class="brand" href="index.html">
-                <img src="Logo.png" alt="CBD OPS Logo">
-                <span>CBD <b>OPS</b></span>
+
+                <img src="Images/Logo.png" alt="CBD OPS Logo">
+
+                <span>
+                    CBD <b>OPS</b>
+                </span>
+
             </a>
 
-            <button class="menu-toggle" aria-label="Open navigation">
+
+            <!-- MOBILE MENU BUTTON -->
+            <button
+                class="menu-toggle"
+                type="button"
+                aria-label="Open navigation menu"
+                aria-expanded="false"
+                aria-controls="main-navigation">
+
                 ☰
+
             </button>
 
-            <ul class="nav-links">
+
+            <!-- NAVIGATION LINKS -->
+            <ul class="nav-links" id="main-navigation">
 
                 <li>
-                    <a class="active" href="index.html">Home</a>
+                    <a class="active" href="index.html">
+                        Home
+                    </a>
                 </li>
 
                 <li>
-                    <a href="properties.html">Properties</a>
+                    <a href="properties.html">
+                        Properties
+                    </a>
                 </li>
 
                 <li>
-                    <a href="about.html">About Us</a>
+                    <a href="about.html">
+                        About Us
+                    </a>
                 </li>
 
                 <li>
-                    <a href="contact.html">Contact</a>
+                    <a href="contact.html">
+                        Contact
+                    </a>
                 </li>
 
             </ul>
 
+
+            <!-- DESKTOP BUTTON -->
             <a class="btn btn-gold nav-btn" href="contact.html">
                 List Your Property
             </a>
@@ -67,8 +98,9 @@
 
     <main>
 
-        <!-- HERO SECTION -->
-
+        <!-- ===============================
+             HERO SECTION
+        ================================ -->
         <section class="hero">
 
             <div class="hero-overlay"></div>
@@ -106,7 +138,6 @@
 
 
             <!-- SEARCH BOX -->
-
             <div class="search-card container">
 
                 <div class="search-heading">
@@ -115,10 +146,7 @@
 
                     <div>
                         <strong>Find your property</strong>
-
-                        <small>
-                            Search by your preferences
-                        </small>
+                        <small>Search by your preferences</small>
                     </div>
 
                 </div>
@@ -145,23 +173,23 @@
                                 Any type
                             </option>
 
-                            <option>
+                            <option value="House">
                                 House
                             </option>
 
-                            <option>
+                            <option value="Apartment">
                                 Apartment
                             </option>
 
-                            <option>
+                            <option value="Student Accommodation">
                                 Student Accommodation
                             </option>
 
-                            <option>
+                            <option value="Office">
                                 Office
                             </option>
 
-                            <option>
+                            <option value="Commercial">
                                 Commercial
                             </option>
 
@@ -179,19 +207,19 @@
                                 Any
                             </option>
 
-                            <option>
+                            <option value="1">
                                 1+
                             </option>
 
-                            <option>
+                            <option value="2">
                                 2+
                             </option>
 
-                            <option>
+                            <option value="3">
                                 3+
                             </option>
 
-                            <option>
+                            <option value="4">
                                 4+
                             </option>
 
@@ -215,8 +243,9 @@
         </section>
 
 
-        <!-- FEATURED PROPERTIES -->
-
+        <!-- ===============================
+             FEATURED PROPERTIES
+        ================================ -->
         <section class="section container">
 
             <div class="section-heading">
@@ -248,14 +277,13 @@
 
 
                 <!-- PROPERTY 1 -->
-
                 <article class="property-card">
 
                     <div class="property-image">
 
                         <img
-                            src="Front house 2.jpg"
-                            alt="Modern family home">
+                            src="Images/Front hous 2.jpg"
+                            alt="Modern family home in Durban">
 
                         <span class="badge">
                             For Sale
@@ -275,22 +303,29 @@
                         </h3>
 
                         <p class="property-price">
-                            R1,850,000
+                            R2,850,000
                         </p>
 
                         <div class="features">
 
-                            <span>🛏 4 Beds</span>
+                            <span>
+                                🛏 4 Beds
+                            </span>
 
-                            <span>🚿 3 Baths</span>
+                            <span>
+                                🚿 3 Baths
+                            </span>
 
-                            <span>⌂ 2 Garage</span>
+                            <span>
+                                ⌂ 2 Garage
+                            </span>
 
                         </div>
 
+
                         <a
                             class="btn btn-dark full"
-                            href="property-details.html">
+                            href="property-details.html?id=modern-home">
 
                             View Details
 
@@ -302,14 +337,13 @@
 
 
                 <!-- PROPERTY 2 -->
-
                 <article class="property-card">
 
                     <div class="property-image">
 
                         <img
-                            src="int 4 bedroom.jpg"
-                            alt="Four bedroom interior">
+                            src="Images/int 4 bedroom.jpg"
+                            alt="Luxury four bedroom home in Umhlanga">
 
                         <span class="badge rent">
                             For Rent
@@ -335,17 +369,24 @@
 
                         <div class="features">
 
-                            <span>🛏 4 Beds</span>
+                            <span>
+                                🛏 4 Beds
+                            </span>
 
-                            <span>🚿 3 Baths</span>
+                            <span>
+                                🚿 3 Baths
+                            </span>
 
-                            <span>⌂ 2 Garage</span>
+                            <span>
+                                ⌂ 2 Garage
+                            </span>
 
                         </div>
 
+
                         <a
                             class="btn btn-dark full"
-                            href="property-details.html">
+                            href="property-details.html?id=luxury-home">
 
                             View Details
 
@@ -357,14 +398,13 @@
 
 
                 <!-- PROPERTY 3 -->
-
                 <article class="property-card">
 
                     <div class="property-image">
 
                         <img
-                            src="Backyard 2.jpeg"
-                            alt="Spacious property backyard">
+                            src="Images/Backyard 2.jpeg"
+                            alt="Contemporary coastal home in Ballito">
 
                         <span class="badge">
                             For Sale
@@ -384,22 +424,29 @@
                         </h3>
 
                         <p class="property-price">
-                            R2,450,000
+                            R1,450,000
                         </p>
 
                         <div class="features">
 
-                            <span>🛏 3 Beds</span>
+                            <span>
+                                🛏 3 Beds
+                            </span>
 
-                            <span>🚿 2 Baths</span>
+                            <span>
+                                🚿 2 Baths
+                            </span>
 
-                            <span>⌂ 2 Garage</span>
+                            <span>
+                                ⌂ 2 Garage
+                            </span>
 
                         </div>
 
+
                         <a
                             class="btn btn-dark full"
-                            href="property-details.html">
+                            href="property-details.html?id=coastal-home">
 
                             View Details
 
@@ -414,53 +461,31 @@
         </section>
 
 
-        <!-- STATISTICS -->
-
+        <!-- ===============================
+             STATISTICS
+        ================================ -->
         <section class="dark-section">
 
             <div class="container stats">
 
                 <div>
-
                     <strong>100+</strong>
-
-                    <span>
-                        Property Listings
-                    </span>
-
+                    <span>Property Listings</span>
                 </div>
 
-
                 <div>
-
                     <strong>50+</strong>
-
-                    <span>
-                        Trusted Owners & Agents
-                    </span>
-
+                    <span>Trusted Owners & Agents</span>
                 </div>
 
-
                 <div>
-
                     <strong>24/7</strong>
-
-                    <span>
-                        Online Property Search
-                    </span>
-
+                    <span>Online Property Search</span>
                 </div>
 
-
                 <div>
-
                     <strong>100%</strong>
-
-                    <span>
-                        Customer Focused
-                    </span>
-
+                    <span>Customer Focused</span>
                 </div>
 
             </div>
@@ -468,15 +493,16 @@
         </section>
 
 
-        <!-- ABOUT PREVIEW -->
-
+        <!-- ===============================
+             ABOUT PREVIEW
+        ================================ -->
         <section class="section container split-section">
 
             <div>
 
                 <img
                     class="rounded-img"
-                    src="EXTERIOR.jpg"
+                    src="Images/EXTERIOR.jpg"
                     alt="CBD OPS featured property">
 
             </div>
@@ -533,15 +559,67 @@
 
         </section>
 
+
+        <!-- ===============================
+             REFERENCES
+        ================================ -->
+        <section class="references-section">
+
+            <div class="container">
+
+                <p class="eyebrow gold-text">
+                    REFERENCES
+                </p>
+
+                <h2>
+                    Sources & References
+                </h2>
+
+                <div class="references-list">
+
+                    <p>
+                        Google Fonts. (2026).
+                        <em>Open Sans</em> and <em>Poppins</em>.
+                        Available at:
+                        https://fonts.google.com/
+                    </p>
+
+                    <p>
+                        CBD OPS. (2026).
+                        <em>CBD OPS Logo</em>.
+                        Own design / created for the CBD OPS website.
+                    </p>
+
+                    <p>
+                        CBD OPS. (2026).
+                        <em>Property images</em>.
+                        Images used throughout the CBD OPS website.
+                    </p>
+
+                    <p>
+                        CBD OPS. (2026).
+                        <em>Website content and property information</em>.
+                        Original content created for the CBD OPS website.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
     </main>
 
 
-    <!-- FOOTER -->
-
+    <!-- ===============================
+         FOOTER
+    ================================ -->
     <footer class="footer">
 
         <div class="container footer-grid">
 
+
+            <!-- FOOTER BRAND -->
             <div>
 
                 <a
@@ -549,7 +627,7 @@
                     href="index.html">
 
                     <img
-                        src="Logo.png"
+                        src="Images/Logo.png"
                         alt="CBD OPS Logo">
 
                     <span>
@@ -565,6 +643,7 @@
             </div>
 
 
+            <!-- QUICK LINKS -->
             <div>
 
                 <h4>
@@ -590,6 +669,7 @@
             </div>
 
 
+            <!-- PROPERTY LINKS -->
             <div>
 
                 <h4>
@@ -611,6 +691,7 @@
             </div>
 
 
+            <!-- CONTACT -->
             <div>
 
                 <h4>
@@ -634,6 +715,7 @@
         </div>
 
 
+        <!-- COPYRIGHT -->
         <div class="copyright">
 
             © 2026 CBD OPS. All rights reserved.
@@ -643,6 +725,7 @@
     </footer>
 
 
+    <!-- JavaScript -->
     <script src="js/script.js"></script>
 
 </body>
