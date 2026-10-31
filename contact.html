@@ -91,7 +91,7 @@
             <!-- DESKTOP BUTTON -->
             <a
                 class="btn btn-gold nav-btn"
-                href="#enquiry">
+                href="#contactForm">
 
                 List Your Property
 
@@ -209,120 +209,182 @@
 
             <!-- ENQUIRY FORM -->
             <form
-                id="enquiry"
-                class="contact-form"
-                novalidate>
+    id="contactForm"
+    class="contact-form"
+    novalidate>
 
-                <h2>
-                    Property Enquiry
-                </h2>
+    <h2>
+        Contact CBD OPS
+    </h2>
 
+    <!-- NAME -->
+    <div class="form-field">
 
-                <!-- NAME -->
-                <label for="name">
-                    Full Name
+        <label for="contactName">
+            Full Name <span class="required">*</span>
+        </label>
 
-                    <input
-                        id="name"
-                        name="name"
-                        required
-                        type="text"
-                        autocomplete="name"
-                        placeholder="Your name">
+        <input
+            id="contactName"
+            name="contactName"
+            required
+            type="text"
+            autocomplete="name"
+            placeholder="Your full name">
 
-                </label>
+        <span
+            id="contactNameError"
+            class="field-error"
+            aria-live="polite">
+        </span>
 
-
-                <!-- EMAIL -->
-                <label for="email">
-                    Email Address
-
-                    <input
-                        id="email"
-                        name="email"
-                        required
-                        type="email"
-                        autocomplete="email"
-                        placeholder="you@example.com">
-
-                </label>
+    </div>
 
 
-                <!-- PHONE -->
-                <label for="phone">
-                    Phone Number
+    <!-- EMAIL -->
+    <div class="form-field">
 
-                    <input
-                        id="phone"
-                        name="phone"
-                        type="tel"
-                        autocomplete="tel"
-                        placeholder="+27...">
+        <label for="contactEmail">
+            Email Address <span class="required">*</span>
+        </label>
 
-                </label>
+        <input
+            id="contactEmail"
+            name="contactEmail"
+            required
+            type="email"
+            autocomplete="email"
+            placeholder="you@example.com">
 
+        <span
+            id="contactEmailError"
+            class="field-error"
+            aria-live="polite">
+        </span>
 
-                <!-- ENQUIRY TYPE -->
-                <label for="enquiryType">
-                    Enquiry Type
-
-                    <select
-                        id="enquiryType"
-                        name="enquiryType">
-
-                        <option value="Property enquiry">
-                            Property enquiry
-                        </option>
-
-                        <option value="Book a viewing">
-                            Book a viewing
-                        </option>
-
-                        <option value="List my property">
-                            List my property
-                        </option>
-
-                        <option value="General question">
-                            General question
-                        </option>
-
-                    </select>
-
-                </label>
+    </div>
 
 
-                <!-- MESSAGE -->
-                <label for="message">
-                    Message
+    <!-- PHONE -->
+    <div class="form-field">
 
-                    <textarea
-                        id="message"
-                        name="message"
-                        required
-                        rows="6"
-                        placeholder="Tell us how we can help..."></textarea>
+        <label for="contactPhone">
+            Phone Number <span class="required">*</span>
+        </label>
 
-                </label>
+        <input
+            id="contactPhone"
+            name="contactPhone"
+            required
+            type="tel"
+            autocomplete="tel"
+            placeholder="+27 81 460 2421">
+
+        <span
+            id="contactPhoneError"
+            class="field-error"
+            aria-live="polite">
+        </span>
+
+    </div>
 
 
-                <!-- SUBMIT -->
-                <button
-                    class="btn btn-gold full"
-                    type="submit">
+    <!-- MESSAGE TYPE -->
+    <div class="form-field">
 
-                    Send Enquiry
+        <label for="messageType">
+            Message Type <span class="required">*</span>
+        </label>
 
-                </button>
+        <select
+            id="messageType"
+            name="messageType"
+            required>
+
+            <option value="">
+                Select message type
+            </option>
+
+            <option value="Property enquiry">
+                Property enquiry
+            </option>
+
+            <option value="Book a viewing">
+                Book a viewing
+            </option>
+
+            <option value="List my property">
+                List my property
+            </option>
+
+            <option value="General question">
+                General question
+            </option>
+
+        </select>
+
+        <span
+            id="messageTypeError"
+            class="field-error"
+            aria-live="polite">
+        </span>
+
+    </div>
 
 
-                <!-- JAVASCRIPT MESSAGE -->
-                <p
-                    id="formMessage"
-                    class="form-message"
-                    aria-live="polite">
-                </p>
+    <!-- MESSAGE -->
+    <div class="form-field">
 
-            </form>
+        <label for="contactMessage">
+            Full Message <span class="required">*</span>
+        </label>
+
+        <textarea
+            id="contactMessage"
+            name="contactMessage"
+            required
+            rows="6"
+            placeholder="Tell us how we can help..."></textarea>
+
+        <span
+            id="contactMessageError"
+            class="field-error"
+            aria-live="polite">
+        </span>
+
+    </div>
+
+
+    <!-- SUBMIT -->
+    <div class="form-actions">
+
+        <button
+            class="btn btn-gold"
+            type="submit">
+
+            Send Message
+
+        </button>
+
+        <button
+            class="btn btn-dark"
+            type="reset">
+
+            Clear Form
+
+        </button>
+
+    </div>
+
+
+    <!-- RESPONSE -->
+    <p
+        id="contactFormMessage"
+        class="form-message"
+        aria-live="polite">
+    </p>
+
+</form>
 
         </section>
 
@@ -512,7 +574,7 @@
                     For Rent
                 </a>
 
-                <a href="#enquiry">
+                <a href="#contactForm">
                     List Your Property
                 </a>
 

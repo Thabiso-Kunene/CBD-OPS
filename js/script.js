@@ -1,398 +1,321 @@
-console.log("CBD OPS JavaScript loaded");
+/* =====================================================
+   CBD OPS - MAIN JAVASCRIPT
+   
+===================================================== */
 
 
-// =====================================================
-// PROPERTY DATA
-// =====================================================
+/* =====================================================
+   PROPERTY DATA
+===================================================== */
 
 const properties = {
 
     "modern-home": {
-
         title: "Modern Family Home",
-
         status: "For Sale",
-
-        location: "Durban",
-
+        location: "Durban, KwaZulu-Natal",
         type: "House",
-
         price: "R2,850,000",
 
-        bedrooms: "4",
-
-        bathrooms: "3",
-
-        garages: "2",
+        bedrooms: 4,
+        bathrooms: 3,
+        garages: 2,
 
         description:
-            "A beautiful modern family home in Durban with spacious living areas, stylish finishes, and a comfortable outdoor space.",
+            "This modern family home in Durban offers spacious living areas, comfortable bedrooms and quality finishes. The property is designed for convenient family living and provides a welcoming combination of indoor and outdoor spaces.",
 
-        mainImage: "Images/Front hous 2.jpg",
+        image: "Images/Front hous 2.jpg",
 
         gallery: [
-
             "Images/Front hous 2.jpg",
-
             "Images/Kitchen.jpg",
-
-            "Images/EXTERIOR.jpg",
-
-            "Images/Backyard 2.jpeg"
-
+            "Images/view property 2.jpg"
         ]
-
     },
 
-
-    // =================================================
-    // COASTAL HOME
-    // =================================================
 
     "coastal-home": {
-    title: "Contemporary Coastal Home",
-    status: "For Sale",
-    location: "Ballito",
-    type: "House",
-    price: "R1,450,000",
-    bedrooms: "3",
-    bathrooms: "2",
-    garages: "2",
-    description:
-        "Enjoy coastal living in this beautiful home located in Ballito. Perfect for families looking for comfort and style.",
-    mainImage: "Images/BACKYARD 2.jpeg",
-    gallery: [
-        "Images/BACKYARD 2.jpeg",
-        "Images/MAIN ENTRANCE.jpg",
-        "Images/EXTERIOR.jpg",
-        "Images/house 1.jpg"
-    ]
-},
-    // =================================================
-    // LUXURY FOUR BEDROOM HOME
-    // =================================================
-
-    "luxury-home": {
-
-        title: "Luxury Four Bedroom Home",
-
-        status: "For Rent",
-
-        location: "Umhlanga",
-
+        title: "Contemporary Coastal Home",
+        status: "For Sale",
+        location: "Ballito, KwaZulu-Natal",
         type: "House",
+        price: "R1,450,000",
 
-        price: "R18,500/month",
-
-        bedrooms: "4",
-
-        bathrooms: "3",
-
-        garages: "2",
+        bedrooms: 3,
+        bathrooms: 2,
+        garages: 2,
 
         description:
-            "A luxury four-bedroom rental home in Umhlanga featuring spacious interiors and modern finishes.",
+            "A contemporary coastal home in Ballito offering comfortable living spaces, modern finishes and a relaxed lifestyle close to the coast.",
 
-        mainImage: "Images/int 4 bedroom.jpg",
+        image: "Images/BACKYARD 2.jpeg",
 
         gallery: [
-
-            "Images/int 4 bedroom.jpg",
-
-            "Images/int 3.jpg",
-
-            "Images/int 4.jpg",
-
-            "Images/EXTERIOR.jpg"
-
+            "Images/BACKYARD 2.jpeg",
+            "Images/EXTERIOR.jpg",
+            "Images/int 1.jpg"
         ]
-
     },
 
 
-    // =================================================
-    // CITY APARTMENT
-    // =================================================
-
-    "city-apartment": {
-
-        title: "Modern City Apartment",
-
+    "luxury-home": {
+        title: "Luxury Four Bedroom",
         status: "For Rent",
+        location: "Umhlanga, KwaZulu-Natal",
+        type: "House",
+        price: "R18,500/month",
 
-        location: "Durban",
-
-        type: "Apartment",
-
-        price: "R11,500/month",
-
-        bedrooms: "2",
-
-        bathrooms: "2",
-
-        garages: "1",
+        bedrooms: 4,
+        bathrooms: 3,
+        garages: 2,
 
         description:
-            "A modern two-bedroom apartment in Durban, ideal for professionals and small families.",
+            "This luxury four-bedroom home in Umhlanga provides spacious accommodation, modern interiors and comfortable living areas suitable for families looking for a premium rental property.",
 
-        mainImage: "Images/int2.jpg",
+        image: "Images/int 4 bedroom.jpg",
 
         gallery: [
-
-            "Images/int2.jpg",
-
-            "Images/flat pic 2.jpg",
-
-            "Images/flat pic 3.jpg",
-
-            "Images/flat.jpg"
-
+            "Images/int 4 bedroom.jpg",
+            "Images/flat.jpg",
+            "Images/flat pic 3.jpg"
         ]
+    },
 
+
+    "city-apartment": {
+        title: "Modern City Apartment",
+        status: "For Rent",
+        location: "Durban, KwaZulu-Natal",
+        type: "Apartment",
+        price: "R11,500/month",
+
+        bedrooms: 2,
+        bathrooms: 2,
+        garages: 1,
+
+        description:
+            "A modern city apartment in Durban offering comfortable accommodation, practical living spaces and convenient access to the surrounding city area.",
+
+        image: "Images/int2.jpg",
+
+        gallery: [
+            "Images/int2.jpg",
+            "Images/int 3.jpg",
+            "Images/int 4.jpg"
+        ]
     }
 
 };
 
 
-// =====================================================
-// PAGE INITIALISATION
-// =====================================================
+/* =====================================================
+   DOM READY
+===================================================== */
 
 document.addEventListener("DOMContentLoaded", function () {
-
-    console.log("CBD OPS page loaded");
 
     setupMobileMenu();
 
     loadPropertyDetails();
 
-    setupPropertyFilters();
-
     setupHomeSearch();
+
+    applyHomeSearchParameters();
+
+    setupPropertyFilters();
 
     setupContactForm();
 
-    applyHomeSearchParameters();
+    setupEnquiryForm();
 
 });
 
 
-// =====================================================
-// MOBILE NAVIGATION
-// =====================================================
+/* =====================================================
+   MOBILE NAVIGATION
+===================================================== */
 
 function setupMobileMenu() {
 
-    const menuToggle =
-        document.querySelector(".menu-toggle");
-
-    const navLinks =
-        document.querySelector(".nav-links");
-
+    const menuToggle = document.querySelector(".menu-toggle");
+    const navLinks = document.querySelector(".nav-links");
 
     if (!menuToggle || !navLinks) {
         return;
     }
 
+    menuToggle.addEventListener("click", function () {
 
-    menuToggle.addEventListener(
-        "click",
-        function () {
+        const isOpen = navLinks.classList.toggle("show");
 
-            const isOpen =
-                navLinks.classList.toggle("show");
+        menuToggle.setAttribute(
+            "aria-expanded",
+            isOpen ? "true" : "false"
+        );
 
-
-            menuToggle.setAttribute(
-                "aria-expanded",
-                isOpen ? "true" : "false"
-            );
-
-        }
-    );
-
-
-    const links =
-        navLinks.querySelectorAll("a");
-
-
-    links.forEach(function (link) {
-
-        link.addEventListener(
-            "click",
-            function () {
-
-                navLinks.classList.remove("show");
-
-                menuToggle.setAttribute(
-                    "aria-expanded",
-                    "false"
-                );
-
-            }
+        menuToggle.setAttribute(
+            "aria-label",
+            isOpen
+                ? "Close navigation menu"
+                : "Open navigation menu"
         );
 
     });
 
 
-    document.addEventListener(
-        "keydown",
-        function (event) {
+    /* Close menu when a link is selected */
 
-            if (event.key === "Escape") {
+    navLinks.querySelectorAll("a").forEach(function (link) {
 
-                navLinks.classList.remove("show");
+        link.addEventListener("click", function () {
 
-                menuToggle.setAttribute(
-                    "aria-expanded",
-                    "false"
-                );
+            navLinks.classList.remove("show");
 
-            }
+            menuToggle.setAttribute(
+                "aria-expanded",
+                "false"
+            );
+
+            menuToggle.setAttribute(
+                "aria-label",
+                "Open navigation menu"
+            );
+
+        });
+
+    });
+
+
+    /* Close menu with Escape */
+
+    document.addEventListener("keydown", function (event) {
+
+        if (event.key === "Escape") {
+
+            navLinks.classList.remove("show");
+
+            menuToggle.setAttribute(
+                "aria-expanded",
+                "false"
+            );
+
+            menuToggle.setAttribute(
+                "aria-label",
+                "Open navigation menu"
+            );
 
         }
-    );
+
+    });
 
 }
 
 
-// =====================================================
-// LOAD PROPERTY DETAILS
-// =====================================================
+/* =====================================================
+   PROPERTY DETAILS
+===================================================== */
 
 function loadPropertyDetails() {
 
     const titleElement =
         document.getElementById("propertyTitle");
 
-
-    // Only run on property-details.html
     if (!titleElement) {
         return;
     }
 
 
-    // -------------------------------------------------
-    // GET PROPERTY ID FROM URL
-    // -------------------------------------------------
-
-    const urlParams =
+    const params =
         new URLSearchParams(
             window.location.search
         );
 
 
     const propertyId =
-    urlParams.get("id") || "coastal-home";
+        params.get("id") || "modern-home";
 
-
-    console.log(
-        "Property ID from URL:",
-        propertyId
-    );
-
-
-    // -------------------------------------------------
-    // FIND PROPERTY
-    // -------------------------------------------------
 
     const property =
         properties[propertyId];
 
 
+    /* =========================================
+       PROPERTY NOT FOUND
+    ========================================= */
+
     if (!property) {
-
-        console.error(
-            "PROPERTY NOT FOUND:",
-            propertyId
-        );
-
 
         titleElement.textContent =
             "Property Not Found";
 
 
+        const statusElement =
+            document.getElementById("propertyStatus");
+
+        const locationElement =
+            document.getElementById("propertyLocation");
+
+        const priceElement =
+            document.getElementById("propertyPrice");
+
+        const bedroomsElement =
+            document.getElementById("bedrooms");
+
+        const bathroomsElement =
+            document.getElementById("bathrooms");
+
+        const garagesElement =
+            document.getElementById("garages");
+
         const descriptionElement =
             document.getElementById("description");
 
 
+        if (statusElement) {
+            statusElement.textContent = "";
+        }
+
+        if (locationElement) {
+            locationElement.textContent = "";
+        }
+
+        if (priceElement) {
+            priceElement.textContent = "";
+        }
+
+        if (bedroomsElement) {
+            bedroomsElement.textContent = "-";
+        }
+
+        if (bathroomsElement) {
+            bathroomsElement.textContent = "-";
+        }
+
+        if (garagesElement) {
+            garagesElement.textContent = "-";
+        }
+
         if (descriptionElement) {
 
             descriptionElement.textContent =
-                "Sorry, the property you are looking for could not be found.";
+                "The property you are looking for could not be found.";
 
         }
-
 
         return;
     }
 
 
-    console.log(
-        "Property selected:",
-        property.title
-    );
-
-
-    // -------------------------------------------------
-    // GET HTML ELEMENTS
-    // -------------------------------------------------
-
-    const statusElement =
-        document.getElementById(
-            "propertyStatus"
-        );
-
-
-    const locationElement =
-        document.getElementById(
-            "propertyLocation"
-        );
-
-
-    const priceElement =
-        document.getElementById(
-            "propertyPrice"
-        );
-
-
-    const bedroomsElement =
-        document.getElementById(
-            "bedrooms"
-        );
-
-
-    const bathroomsElement =
-        document.getElementById(
-            "bathrooms"
-        );
-
-
-    const garagesElement =
-        document.getElementById(
-            "garages"
-        );
-
-
-    const descriptionElement =
-        document.getElementById(
-            "description"
-        );
-
-
-    const mainImage =
-        document.getElementById(
-            "mainImage"
-        );
-
-
-    // -------------------------------------------------
-    // PROPERTY INFORMATION
-    // -------------------------------------------------
+    /* =========================================
+       BASIC INFORMATION
+    ========================================= */
 
     titleElement.textContent =
         property.title;
 
+
+    const statusElement =
+        document.getElementById("propertyStatus");
 
     if (statusElement) {
 
@@ -402,6 +325,9 @@ function loadPropertyDetails() {
     }
 
 
+    const locationElement =
+        document.getElementById("propertyLocation");
+
     if (locationElement) {
 
         locationElement.textContent =
@@ -409,6 +335,9 @@ function loadPropertyDetails() {
 
     }
 
+
+    const priceElement =
+        document.getElementById("propertyPrice");
 
     if (priceElement) {
 
@@ -418,6 +347,13 @@ function loadPropertyDetails() {
     }
 
 
+    /* =========================================
+       PROPERTY FEATURES
+    ========================================= */
+
+    const bedroomsElement =
+        document.getElementById("bedrooms");
+
     if (bedroomsElement) {
 
         bedroomsElement.textContent =
@@ -425,6 +361,9 @@ function loadPropertyDetails() {
 
     }
 
+
+    const bathroomsElement =
+        document.getElementById("bathrooms");
 
     if (bathroomsElement) {
 
@@ -434,6 +373,9 @@ function loadPropertyDetails() {
     }
 
 
+    const garagesElement =
+        document.getElementById("garages");
+
     if (garagesElement) {
 
         garagesElement.textContent =
@@ -441,6 +383,13 @@ function loadPropertyDetails() {
 
     }
 
+
+    /* =========================================
+       DESCRIPTION
+    ========================================= */
+
+    const descriptionElement =
+        document.getElementById("description");
 
     if (descriptionElement) {
 
@@ -450,231 +399,245 @@ function loadPropertyDetails() {
     }
 
 
-    // -------------------------------------------------
-    // MAIN IMAGE
-    // -------------------------------------------------
+    /* =========================================
+       MAIN IMAGE
+    ========================================= */
+
+    const mainImage =
+        document.getElementById("mainImage");
 
     if (mainImage) {
 
         mainImage.src =
-            property.mainImage;
+            property.image;
 
         mainImage.alt =
-            property.title;
+            `${property.title} in ${property.location}`;
 
     }
 
 
-    // -------------------------------------------------
-    // GALLERY IMAGES
-    // -------------------------------------------------
+    /* =========================================
+       GALLERY
+    ========================================= */
 
-    if (property.gallery) {
+    property.gallery.forEach(
+        function (image, index) {
 
-        property.gallery.forEach(
-            function (image, index) {
-
-                const galleryImage =
-                    document.getElementById(
-                        "gallery" + (index + 1)
-                    );
+            const galleryImage =
+                document.getElementById(
+                    `gallery${index + 1}`
+                );
 
 
-                if (galleryImage) {
+            if (!galleryImage) {
+                return;
+            }
 
-                    galleryImage.src =
-                        image;
 
-                    galleryImage.alt =
-                        property.title +
-                        " image " +
-                        (index + 1);
+            galleryImage.src =
+                image;
+
+
+            galleryImage.alt =
+                `${property.title} gallery image ${index + 1}`;
+
+
+            galleryImage.addEventListener(
+                "click",
+                function () {
+
+                    if (mainImage) {
+
+                        mainImage.src =
+                            image;
+
+                        mainImage.alt =
+                            `${property.title} gallery image ${index + 1}`;
+
+                    }
 
                 }
+            );
 
-            }
+        }
+    );
+
+
+    /* =========================================
+       ENQUIRY BUTTON
+    ========================================= */
+
+    const enquiryButton =
+        document.getElementById(
+            "enquirePropertyButton"
         );
+
+
+    if (enquiryButton) {
+
+        enquiryButton.href =
+            `enquiry.html?id=${encodeURIComponent(propertyId)}`;
 
     }
 
 
-    console.log(
-        "PROPERTY LOADED SUCCESSFULLY:",
-        property.title
+    /* =========================================
+       OTHER ENQUIRY LINKS
+    ========================================= */
+
+    document.querySelectorAll(
+        ".property-enquiry-link a, .enquire-property"
+    ).forEach(
+        function (link) {
+
+            link.href =
+                `enquiry.html?id=${encodeURIComponent(propertyId)}`;
+
+        }
     );
 
 }
 
 
-// =====================================================
-// PROPERTY FILTERING
-// =====================================================
+/* =====================================================
+   PROPERTY FILTERS
+===================================================== */
 
 function setupPropertyFilters() {
 
     const filterForm =
-        document.getElementById(
-            "propertyFilters"
-        );
-
+        document.getElementById("propertyFilters");
 
     if (!filterForm) {
         return;
     }
 
 
-    const locationFilter =
-        document.getElementById(
-            "filterLocation"
-        );
+    const locationInput =
+        document.getElementById("filterLocation");
 
+    const typeSelect =
+        document.getElementById("filterType");
 
-    const typeFilter =
-        document.getElementById(
-            "filterType"
-        );
+    const bedroomsSelect =
+        document.getElementById("filterBedrooms");
 
+    const statusSelect =
+        document.getElementById("filterStatus");
 
-    const bedroomsFilter =
-        document.getElementById(
-            "filterBedrooms"
-        );
-
-
-    const statusFilter =
-        document.getElementById(
-            "filterStatus"
-        );
-
+    const cards =
+        document.querySelectorAll(".searchable");
 
     const resultCount =
-        document.getElementById(
-            "resultCount"
-        );
-
-
-    const propertyCards =
-        document.querySelectorAll(
-            ".searchable"
-        );
+        document.getElementById("resultCount");
 
 
     function filterProperties() {
 
-        const selectedLocation =
-            locationFilter
-                ? locationFilter.value.toLowerCase()
+        const location =
+            locationInput
+                ? locationInput.value.trim().toLowerCase()
                 : "";
 
-
-        const selectedType =
-            typeFilter
-                ? typeFilter.value.toLowerCase()
+        const type =
+            typeSelect
+                ? typeSelect.value.toLowerCase()
                 : "";
 
-
-        const selectedBedrooms =
-            bedroomsFilter
-                ? bedroomsFilter.value
+        const bedrooms =
+            bedroomsSelect
+                ? bedroomsSelect.value
                 : "";
 
-
-        const selectedStatus =
-            statusFilter
-                ? statusFilter.value.toLowerCase()
+        const status =
+            statusSelect
+                ? statusSelect.value.toLowerCase()
                 : "";
 
 
         let visibleCount = 0;
 
 
-        propertyCards.forEach(
-            function (card) {
+        cards.forEach(function (card) {
 
-                const cardLocation =
-                    (
-                        card.dataset.location ||
-                        ""
-                    ).toLowerCase();
+            const cardLocation =
+                (card.dataset.location || "")
+                    .toLowerCase();
 
+            const cardType =
+                (card.dataset.type || "")
+                    .toLowerCase();
 
-                const cardType =
-                    (
-                        card.dataset.type ||
-                        ""
-                    ).toLowerCase();
+            const cardBedrooms =
+                parseInt(
+                    card.dataset.bedrooms || "0",
+                    10
+                );
 
-
-                const cardBedrooms =
-                    card.dataset.bedrooms ||
-                    "";
-
-
-                const cardStatus =
-                    (
-                        card.dataset.status ||
-                        ""
-                    ).toLowerCase();
+            const cardStatus =
+                (card.dataset.status || "")
+                    .toLowerCase();
 
 
-                const locationMatch =
-                    !selectedLocation ||
-                    cardLocation === selectedLocation;
+            const matchesLocation =
+                !location ||
+                cardLocation.includes(location);
 
 
-                const typeMatch =
-                    !selectedType ||
-                    cardType === selectedType;
+            const matchesType =
+                !type ||
+                cardType === type;
 
 
-                const bedroomMatch =
-                    !selectedBedrooms ||
-                    cardBedrooms === selectedBedrooms;
+            const matchesBedrooms =
+                !bedrooms ||
+                cardBedrooms >= parseInt(
+                    bedrooms,
+                    10
+                );
 
 
-                const statusMatch =
-                    !selectedStatus ||
-                    cardStatus === selectedStatus;
+            const matchesStatus =
+                !status ||
+                cardStatus === status;
 
 
-                const matches =
-                    locationMatch &&
-                    typeMatch &&
-                    bedroomMatch &&
-                    statusMatch;
+            const matches =
+                matchesLocation &&
+                matchesType &&
+                matchesBedrooms &&
+                matchesStatus;
 
 
-                if (matches) {
+            if (matches) {
 
-                    card.style.display = "";
+                card.classList.remove("hidden");
 
-                    visibleCount++;
+                visibleCount++;
 
-                } else {
+            } else {
 
-                    card.style.display =
-                        "none";
-
-                }
+                card.classList.add("hidden");
 
             }
-        );
+
+        });
 
 
         if (resultCount) {
 
             resultCount.textContent =
-                visibleCount +
-                (
-                    visibleCount === 1
-                        ? " property found"
-                        : " properties found"
-                );
+                `${visibleCount} ${visibleCount === 1 ? "property" : "properties"} found.`;
 
         }
 
 
         updatePropertySections();
+
+        showNoResultsMessage(
+            visibleCount === 0
+        );
 
     }
 
@@ -691,38 +654,50 @@ function setupPropertyFilters() {
     );
 
 
-    const filterInputs =
-        filterForm.querySelectorAll(
-            "select"
+    [
+        locationInput,
+        typeSelect,
+        bedroomsSelect,
+        statusSelect
+    ].forEach(function (element) {
+
+        if (!element) {
+            return;
+        }
+
+        element.addEventListener(
+            "change",
+            filterProperties
         );
 
+    });
 
-    filterInputs.forEach(
-        function (input) {
 
-            input.addEventListener(
-                "change",
-                filterProperties
-            );
+    if (locationInput) {
 
-        }
-    );
+        locationInput.addEventListener(
+            "input",
+            filterProperties
+        );
 
+    }
+
+
+    /* Initial filter */
 
     filterProperties();
 
 }
 
 
-// =====================================================
-// SHOW / HIDE SALE AND RENT SECTIONS
-// =====================================================
+/* =====================================================
+   PROPERTY SECTION VISIBILITY
+===================================================== */
 
 function updatePropertySections() {
 
     const saleSection =
         document.getElementById("sale");
-
 
     const rentSection =
         document.getElementById("rent");
@@ -731,31 +706,22 @@ function updatePropertySections() {
     if (saleSection) {
 
         const saleCards =
-            saleSection.querySelectorAll(
-                ".searchable"
+            document.querySelectorAll(
+                '[data-status="sale"]'
             );
 
+        const visibleSaleCards =
+            Array.from(saleCards)
+                .some(function (card) {
 
-        let visibleSaleCards = 0;
+                    return !card.classList.contains(
+                        "hidden"
+                    );
 
-
-        saleCards.forEach(function (card) {
-
-            if (
-                card.style.display !== "none"
-            ) {
-
-                visibleSaleCards++;
-
-            }
-
-        });
-
+                });
 
         saleSection.style.display =
-            visibleSaleCards > 0
-                ? ""
-                : "none";
+            visibleSaleCards ? "" : "none";
 
     }
 
@@ -763,55 +729,104 @@ function updatePropertySections() {
     if (rentSection) {
 
         const rentCards =
-            rentSection.querySelectorAll(
-                ".searchable"
+            document.querySelectorAll(
+                '[data-status="rent"]'
             );
 
+        const visibleRentCards =
+            Array.from(rentCards)
+                .some(function (card) {
 
-        let visibleRentCards = 0;
+                    return !card.classList.contains(
+                        "hidden"
+                    );
 
-
-        rentCards.forEach(function (card) {
-
-            if (
-                card.style.display !== "none"
-            ) {
-
-                visibleRentCards++;
-
-            }
-
-        });
-
+                });
 
         rentSection.style.display =
-            visibleRentCards > 0
-                ? ""
-                : "none";
+            visibleRentCards ? "" : "none";
 
     }
 
 }
 
 
-// =====================================================
-// HOME PAGE SEARCH
-// =====================================================
+/* =====================================================
+   NO RESULTS MESSAGE
+===================================================== */
 
-function setupHomeSearch() {
+function showNoResultsMessage(show) {
 
-    const searchForm =
-        document.getElementById(
-            "homeSearch"
-        );
+    const existing =
+        document.getElementById("noResultsMessage");
 
 
-    if (!searchForm) {
+    if (!show) {
+
+        if (existing) {
+            existing.remove();
+        }
+
+        return;
+
+    }
+
+
+    if (existing) {
         return;
     }
 
 
-    searchForm.addEventListener(
+    const filterResults =
+        document.querySelector(".filter-results");
+
+    if (!filterResults) {
+        return;
+    }
+
+
+    const message =
+        document.createElement("div");
+
+    message.id =
+        "noResultsMessage";
+
+    message.className =
+        "no-results";
+
+
+    message.innerHTML = `
+        <h3>No properties found</h3>
+        <p>
+            Try changing your search or filter options
+            to find available properties.
+        </p>
+    `;
+
+
+    filterResults.parentNode.insertBefore(
+        message,
+        filterResults
+    );
+
+}
+
+
+/* =====================================================
+   HOMEPAGE SEARCH
+===================================================== */
+
+function setupHomeSearch() {
+
+    const homeSearch =
+        document.getElementById("homeSearch");
+
+    if (!homeSearch) {
+        return;
+    }
+
+
+    homeSearch.addEventListener(
         "submit",
         function (event) {
 
@@ -821,19 +836,19 @@ function setupHomeSearch() {
             const location =
                 document.getElementById(
                     "homeLocation"
-                )?.value || "";
+                )?.value.trim();
 
 
             const type =
                 document.getElementById(
                     "homeType"
-                )?.value || "";
+                )?.value;
 
 
             const bedrooms =
                 document.getElementById(
                     "homeBedrooms"
-                )?.value || "";
+                )?.value;
 
 
             const params =
@@ -870,17 +885,14 @@ function setupHomeSearch() {
             }
 
 
-            const queryString =
+            const query =
                 params.toString();
 
 
             window.location.href =
-                "properties.html" +
-                (
-                    queryString
-                        ? "?" + queryString
-                        : ""
-                );
+                query
+                    ? `properties.html?${query}`
+                    : "properties.html";
 
         }
     );
@@ -888,19 +900,17 @@ function setupHomeSearch() {
 }
 
 
-// =====================================================
-// APPLY HOME SEARCH PARAMETERS
-// =====================================================
+/* =====================================================
+   APPLY HOMEPAGE SEARCH PARAMETERS
+===================================================== */
 
 function applyHomeSearchParameters() {
 
-    const filterForm =
-        document.getElementById(
-            "propertyFilters"
-        );
-
-
-    if (!filterForm) {
+    if (
+        !window.location.pathname.endsWith(
+            "properties.html"
+        )
+    ) {
         return;
     }
 
@@ -914,52 +924,48 @@ function applyHomeSearchParameters() {
     const location =
         params.get("location");
 
-
     const type =
         params.get("type");
-
 
     const bedrooms =
         params.get("bedrooms");
 
 
-    const locationFilter =
+    const locationInput =
         document.getElementById(
             "filterLocation"
         );
 
-
-    const typeFilter =
+    const typeSelect =
         document.getElementById(
             "filterType"
         );
 
-
-    const bedroomsFilter =
+    const bedroomsSelect =
         document.getElementById(
             "filterBedrooms"
         );
 
 
-    if (location && locationFilter) {
+    if (locationInput && location) {
 
-        locationFilter.value =
+        locationInput.value =
             location;
 
     }
 
 
-    if (type && typeFilter) {
+    if (typeSelect && type) {
 
-        typeFilter.value =
+        typeSelect.value =
             type;
 
     }
 
 
-    if (bedrooms && bedroomsFilter) {
+    if (bedroomsSelect && bedrooms) {
 
-        bedroomsFilter.value =
+        bedroomsSelect.value =
             bedrooms;
 
     }
@@ -967,27 +973,18 @@ function applyHomeSearchParameters() {
 }
 
 
-// =====================================================
-// CONTACT FORM
-// =====================================================
+/* =====================================================
+   CONTACT FORM
+===================================================== */
 
 function setupContactForm() {
 
     const form =
-        document.getElementById(
-            "enquiry"
-        );
-
+        document.getElementById("contactForm");
 
     if (!form) {
         return;
     }
-
-
-    const formMessage =
-        document.getElementById(
-            "formMessage"
-        );
 
 
     form.addEventListener(
@@ -997,87 +994,127 @@ function setupContactForm() {
             event.preventDefault();
 
 
-            const name =
-                document.getElementById(
-                    "name"
-                )?.value.trim();
+            clearFormErrors(form);
 
+
+            const name =
+                form.querySelector(
+                    "#contactName"
+                );
 
             const email =
-                document.getElementById(
-                    "email"
-                )?.value.trim();
-
+                form.querySelector(
+                    "#contactEmail"
+                );
 
             const phone =
-                document.getElementById(
-                    "phone"
-                )?.value.trim();
+                form.querySelector(
+                    "#contactPhone"
+                );
 
-
-            const enquiryType =
-                document.getElementById(
-                    "enquiryType"
-                )?.value;
-
+            const messageType =
+                form.querySelector(
+                    "#messageType"
+                );
 
             const message =
-                document.getElementById(
-                    "message"
-                )?.value.trim();
+                form.querySelector(
+                    "#contactMessage"
+                );
 
 
-            // =================================================
-            // VALIDATION
-            // =================================================
+            let valid = true;
+
+
+            if (!name || name.value.trim().length < 2) {
+
+                showFieldError(
+                    name,
+                    "Please enter your full name."
+                );
+
+                valid = false;
+
+            }
+
 
             if (
-                !name ||
                 !email ||
-                !phone ||
-                !enquiryType ||
-                !message
+                !isValidEmail(email.value.trim())
             ) {
 
-                showFormMessage(
-                    formMessage,
-                    "Please complete all required fields.",
-                    "error"
+                showFieldError(
+                    email,
+                    "Please enter a valid email address."
                 );
 
-                return;
+                valid = false;
+
             }
-
-
-            // =================================================
-            // EMAIL VALIDATION
-            // =================================================
-
-            const emailPattern =
-                /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 
             if (
-                !emailPattern.test(email)
+                phone &&
+                phone.value.trim() &&
+                !isValidPhone(phone.value.trim())
             ) {
 
+                showFieldError(
+                    phone,
+                    "Please enter a valid phone number."
+                );
+
+                valid = false;
+
+            }
+
+
+            if (
+                !messageType ||
+                !messageType.value
+            ) {
+
+                showFieldError(
+                    messageType,
+                    "Please select a message type."
+                );
+
+                valid = false;
+
+            }
+
+
+            if (
+                !message ||
+                message.value.trim().length < 10
+            ) {
+
+                showFieldError(
+                    message,
+                    "Please enter a message of at least 10 characters."
+                );
+
+                valid = false;
+
+            }
+
+
+            if (!valid) {
+
                 showFormMessage(
-                    formMessage,
-                    "Please enter a valid email address.",
+                    form,
+                    "Please correct the highlighted fields and try again.",
                     "error"
                 );
 
                 return;
+
             }
 
-
-            // =================================================
-            // SUCCESS
-            // =================================================
 
             showFormMessage(
-                formMessage,
-                "Thank you! Your enquiry has been submitted successfully.",
+                form,
+                "Thank you! Your message has been received. CBD OPS will respond as soon as possible.",
                 "success"
             );
 
@@ -1090,33 +1127,433 @@ function setupContactForm() {
 }
 
 
-// =====================================================
-// FORM MESSAGE
-// =====================================================
+/* =====================================================
+   PROPERTY ENQUIRY FORM
+===================================================== */
 
-function showFormMessage(
-    element,
-    message,
-    type
-) {
+function setupEnquiryForm() {
 
-    if (!element) {
+    console.log("ENQUIRY FORM FUNCTION STARTED");
+
+    const form =
+        document.getElementById("enquiryForm");
+
+    if (!form) {
         return;
     }
 
 
-    element.textContent =
-        message;
+    loadEnquiryProperty();
 
 
-    element.classList.remove(
-        "success",
-        "error"
-    );
+    form.addEventListener(
+        "submit",
+        function (event) {
+
+            event.preventDefault();
 
 
-    element.classList.add(
-        type
+            clearFormErrors(form);
+
+
+            const name =
+                form.querySelector(
+                    "#enquiryName"
+                );
+
+            const email =
+                form.querySelector(
+                    "#enquiryEmail"
+                );
+
+            const phone =
+                form.querySelector(
+                    "#enquiryPhone"
+                );
+
+            const enquiryType =
+                form.querySelector(
+                    "#enquiryType"
+                );
+
+            const property =
+                form.querySelector(
+                    "#enquiryProperty"
+                );
+
+            const message =
+                form.querySelector(
+                    "#enquiryMessage"
+                );
+
+
+            let valid = true;
+
+
+            if (
+                !name ||
+                name.value.trim().length < 2
+            ) {
+
+                showFieldError(
+                    name,
+                    "Please enter your full name."
+                );
+
+                valid = false;
+
+            }
+
+
+            if (
+                !email ||
+                !isValidEmail(
+                    email.value.trim()
+                )
+            ) {
+
+                showFieldError(
+                    email,
+                    "Please enter a valid email address."
+                );
+
+                valid = false;
+
+            }
+
+
+            if (
+                !phone ||
+                !isValidPhone(
+                    phone.value.trim()
+                )
+            ) {
+
+                showFieldError(
+                    phone,
+                    "Please enter a valid phone number."
+                );
+
+                valid = false;
+
+            }
+
+
+            if (
+                !property ||
+                !property.value
+            ) {
+
+                showFieldError(
+                    property,
+                    "Please select a property."
+                );
+
+                valid = false;
+
+            }
+
+
+            if (
+                !enquiryType ||
+                !enquiryType.value
+            ) {
+
+                showFieldError(
+                    enquiryType,
+                    "Please select an enquiry type."
+                );
+
+                valid = false;
+
+            }
+
+
+            if (
+                !message ||
+                message.value.trim().length < 10
+            ) {
+
+                showFieldError(
+                    message,
+                    "Please enter a message of at least 10 characters."
+                );
+
+                valid = false;
+
+            }
+
+
+            if (!valid) {
+
+                showFormMessage(
+                    form,
+                    "Please correct the highlighted fields and try again.",
+                    "error"
+                );
+
+                return;
+
+            }
+
+
+            showFormMessage(
+                form,
+                "Thank you! Your property enquiry has been submitted successfully. A CBD OPS representative will contact you soon.",
+                "success"
+            );
+
+
+            form.reset();
+
+
+            /* Restore property selected from URL */
+
+            loadEnquiryProperty();
+
+        }
     );
 
 }
+
+
+/* =====================================================
+   LOAD PROPERTY INTO ENQUIRY FORM
+===================================================== */
+
+function loadEnquiryProperty() {
+
+    const propertySelect =
+        document.getElementById(
+            "enquiryProperty"
+        );
+
+    if (!propertySelect) {
+        return;
+    }
+
+
+    const params =
+        new URLSearchParams(
+            window.location.search
+        );
+
+
+    const propertyId =
+        params.get("id");
+
+
+    if (
+        propertyId &&
+        properties[propertyId]
+    ) {
+
+        propertySelect.value =
+            propertyId;
+
+    }
+
+}
+
+
+/* =====================================================
+   EMAIL VALIDATION
+===================================================== */
+
+function isValidEmail(email) {
+
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(
+        email
+    );
+
+}
+
+
+/* =====================================================
+   PHONE VALIDATION
+===================================================== */
+
+function isValidPhone(phone) {
+
+    const cleaned =
+        phone.replace(
+            /[\s\-()+]/g,
+            ""
+        );
+
+    return /^\d{9,15}$/.test(
+        cleaned
+    );
+
+}
+
+
+/* =====================================================
+   FIELD ERROR
+===================================================== */
+
+function showFieldError(
+    field,
+    message
+) {
+
+    if (!field) {
+        return;
+    }
+
+
+    field.classList.add(
+        "input-error"
+    );
+
+    field.setAttribute(
+        "aria-invalid",
+        "true"
+    );
+
+
+    let errorElement =
+        document.getElementById(
+            `${field.id}Error`
+        );
+
+
+    if (!errorElement) {
+
+        errorElement =
+            document.createElement(
+                "span"
+            );
+
+        errorElement.id =
+            `${field.id}Error`;
+
+        errorElement.className =
+            "field-error";
+
+        errorElement.setAttribute(
+            "role",
+            "alert"
+        );
+
+
+        field.parentNode.appendChild(
+            errorElement
+        );
+
+    }
+
+
+    errorElement.textContent =
+        message;
+
+
+    field.setAttribute(
+        "aria-describedby",
+        errorElement.id
+    );
+
+}
+
+
+/* =====================================================
+   CLEAR FORM ERRORS
+===================================================== */
+
+function clearFormErrors(form) {
+
+    form.querySelectorAll(
+        ".input-error"
+    ).forEach(function (field) {
+
+        field.classList.remove(
+            "input-error"
+        );
+
+        field.removeAttribute(
+            "aria-invalid"
+        );
+
+        field.removeAttribute(
+            "aria-describedby"
+        );
+
+    });
+
+
+    form.querySelectorAll(
+        ".field-error"
+    ).forEach(function (error) {
+
+        error.remove();
+
+    });
+
+
+    const message =
+        form.querySelector(
+            ".form-message"
+        );
+
+    if (message) {
+
+        message.textContent = "";
+
+        message.className =
+            "form-message";
+
+    }
+
+}
+
+
+/* =====================================================
+   FORM MESSAGE
+===================================================== */
+
+function showFormMessage(
+    form,
+    message,
+    type
+) {
+
+    let messageElement =
+        form.querySelector(
+            ".form-message"
+        );
+
+
+    if (!messageElement) {
+
+        messageElement =
+            document.createElement(
+                "p"
+            );
+
+        messageElement.className =
+            "form-message";
+
+        messageElement.setAttribute(
+            "role",
+            "status"
+        );
+
+        form.appendChild(
+            messageElement
+        );
+
+    }
+
+
+    messageElement.textContent =
+        message;
+
+    messageElement.className =
+        `form-message ${type}`;
+
+}
+
+
+/* =====================================================
+   END OF SCRIPT
+===================================================== */

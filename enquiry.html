@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="description"
+        content="Submit a property enquiry to CBD OPS. Enquire about properties for sale or rent, book a viewing or request more information."
+    >
+
+    <meta
+        name="keywords"
+        content="CBD OPS property enquiry, property enquiry Durban, property viewing, houses for sale, houses for rent, KwaZulu-Natal property"
+    >
+
+    <title>Property Enquiry | CBD OPS</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&family=Poppins:wght@500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+
+<body>
+
+
+    <!-- ===============================
+         NAVIGATION
+    ================================ -->
+
+    <header class="site-header">
+
+        <nav class="navbar container">
+
+            <!-- LOGO -->
+
+            <a class="brand" href="index.html">
+
+                <img
+                    src="Images/Logo.png"
+                    alt="CBD OPS Logo"
+                >
+
+                <span>
+                    CBD <b>OPS</b>
+                </span>
+
+            </a>
+
+
+            <!-- MOBILE MENU BUTTON -->
+
+            <button
+                class="menu-toggle"
+                type="button"
+                aria-label="Open navigation menu"
+                aria-expanded="false"
+                aria-controls="main-navigation"
+            >
+
+                ☰
+
+            </button>
+
+
+            <!-- NAVIGATION LINKS -->
+
+            <ul class="nav-links" id="main-navigation">
+
+                <li>
+                    <a href="index.html">
+                        Home
+                    </a>
+                </li>
+
+                <li>
+                    <a href="properties.html">
+                        Properties
+                    </a>
+                </li>
+
+                <li>
+                    <a href="about.html">
+                        About Us
+                    </a>
+                </li>
+
+                <li>
+                    <a href="contact.html">
+                        Contact
+                    </a>
+                </li>
+
+            </ul>
+
+
+            <!-- DESKTOP BUTTON -->
+
+            <a
+                class="btn btn-gold nav-btn"
+                href="contact.html"
+            >
+
+                List Your Property
+
+            </a>
+
+        </nav>
+
+    </header>
+
+
+
+    <main>
+
+
+        <!-- ===============================
+             PAGE HERO
+        ================================ -->
+
+        <section class="page-hero">
+
+            <div class="container">
+
+                <p class="eyebrow gold-text">
+                    PROPERTY ENQUIRY
+                </p>
+
+                <h1>
+                    Enquire About a Property
+                </h1>
+
+                <p>
+                    Complete the form below and the CBD OPS team
+                    will respond to your enquiry.
+                </p>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ===============================
+             ENQUIRY FORM
+        ================================ -->
+
+        <section class="section container">
+
+            <div class="contact-grid">
+
+
+                <!-- INFORMATION -->
+
+                <div>
+
+                    <p class="eyebrow gold-text">
+                        GET IN TOUCH
+                    </p>
+
+                    <h2>
+                        Tell Us What You Need
+                    </h2>
+
+                    <p>
+                        Interested in a property? Use this form to
+                        request more information, arrange a viewing
+                        or ask a question about a listing.
+                    </p>
+
+                    <br>
+
+                    <h3>
+                        Contact Information
+                    </h3>
+
+                    <p>
+                        <strong>Phone:</strong><br>
+                        +27 81 460 2421
+                    </p>
+
+                    <p>
+                        <strong>Email:</strong><br>
+                        info@cbdops.co.za
+                    </p>
+
+                    <p>
+                        <strong>Hours:</strong><br>
+                        Monday - Friday, 08:00 - 17:00
+                    </p>
+
+                </div>
+
+
+
+                <!-- FORM -->
+
+                <div>
+
+                    <form
+                        id="enquiryForm"
+                        class="contact-form"
+                        novalidate
+                    >
+
+                        <h2>
+                            Property Enquiry Form
+                        </h2>
+
+
+                        <!-- FULL NAME -->
+
+                        <div class="form-field">
+
+                            <label for="enquiryName">
+                                Full Name
+                                <span class="required">*</span>
+                            </label>
+
+                            <input
+                                type="text"
+                                id="enquiryName"
+                                name="name"
+                                placeholder="Enter your full name"
+                                autocomplete="name"
+                                required
+                            >
+
+                            <span
+                                class="field-error"
+                                id="enquiryNameError"
+                            ></span>
+
+                        </div>
+
+
+
+                        <!-- EMAIL -->
+
+                        <div class="form-field">
+
+                            <label for="enquiryEmail">
+                                Email Address
+                                <span class="required">*</span>
+                            </label>
+
+                            <input
+                                type="email"
+                                id="enquiryEmail"
+                                name="email"
+                                placeholder="you@example.com"
+                                autocomplete="email"
+                                required
+                            >
+
+                            <span
+                                class="field-error"
+                                id="enquiryEmailError"
+                            ></span>
+
+                        </div>
+
+
+
+                        <!-- PHONE -->
+
+                        <div class="form-field">
+
+                            <label for="enquiryPhone">
+                                Phone Number
+                                <span class="required">*</span>
+                            </label>
+
+                            <input
+                                type="tel"
+                                id="enquiryPhone"
+                                name="phone"
+                                placeholder="+27 81 460 2421"
+                                autocomplete="tel"
+                                required
+                            >
+
+                            <span
+                                class="field-error"
+                                id="enquiryPhoneError"
+                            ></span>
+
+                        </div>
+
+
+
+                        <!-- PROPERTY -->
+
+                        <div class="form-field">
+
+                            <label for="enquiryProperty">
+                                Property
+                                <span class="required">*</span>
+                            </label>
+
+                            <select
+                                id="enquiryProperty"
+                                name="property"
+                                required
+                            >
+
+                                <option value="">
+                                    Select a property
+                                </option>
+
+                                <option value="modern-home">
+                                    Modern Family Home - Durban
+                                </option>
+
+                                <option value="coastal-home">
+                                    Contemporary Coastal Home - Ballito
+                                </option>
+
+                                <option value="luxury-home">
+                                    Luxury Four Bedroom - Umhlanga
+                                </option>
+
+                                <option value="city-apartment">
+                                    Modern City Apartment - Durban
+                                </option>
+
+                            </select>
+
+                            <span
+                                class="field-error"
+                                id="enquiryPropertyError"
+                            ></span>
+
+                        </div>
+
+
+
+                        <!-- ENQUIRY TYPE -->
+
+                        <div class="form-field">
+
+                            <label for="enquiryType">
+                                Enquiry Type
+                                <span class="required">*</span>
+                            </label>
+
+                            <select
+                                id="enquiryType"
+                                name="enquiryType"
+                                required
+                            >
+
+                                <option value="">
+                                    Select enquiry type
+                                </option>
+
+                                <option value="property">
+                                    Property Information
+                                </option>
+
+                                <option value="viewing">
+                                    Book a Viewing
+                                </option>
+
+                                <option value="price">
+                                    Price / Availability
+                                </option>
+
+                                <option value="general">
+                                    General Question
+                                </option>
+
+                            </select>
+
+                            <span
+                                class="field-error"
+                                id="enquiryTypeError"
+                            ></span>
+
+                        </div>
+
+
+
+                       <!-- MESSAGE -->
+
+<div class="form-field">
+
+    <label for="enquiryMessage">
+        Message
+        <span class="required">*</span>
+    </label>
+
+    <textarea
+        id="enquiryMessage"
+        name="message"
+        rows="6"
+        placeholder="Tell us how we can assist you..."
+        required
+    ></textarea>
+
+    <span
+        class="field-error"
+        id="enquiryMessageError"
+    ></span>
+
+</div>
+
+
+<!-- BUTTONS -->
+
+<div class="form-actions">
+
+    <button
+        type="submit"
+        class="btn btn-gold"
+    >
+        Send Enquiry
+    </button>
+
+    <a
+        href="properties.html"
+        class="btn btn-dark"
+    >
+        Browse Properties
+    </a>
+
+</div>
+
+
+<!-- FORM RESPONSE -->
+
+<p
+    id="enquiryFormMessage"
+    class="form-message"
+    aria-live="polite"
+></p>
+
+
+<p class="form-note">
+    Fields marked with * are required.
+</p>
+
+</form>
+
+</div>
+</section>
+
+
+<!-- HELP SECTION -->
+
+<section class="section">
+    <div class="container">
+
+        <div class="section-heading">
+            <span class="eyebrow">Need Help?</span>
+            <h2>Talk to CBD OPS</h2>
+            <p>
+                Our team is available to assist with property enquiries,
+                viewings and general real-estate questions.
+            </p>
+        </div>
+
+        <a href="contact.html" class="btn btn-gold">
+            Contact CBD OPS
+        </a>
+
+    </div>
+</section>
+
+
+<!-- REFERENCES -->
+
+<section class="section references">
+    <div class="container">
+
+        <div class="section-heading">
+            <span class="eyebrow">References</span>
+            <h2>Information & Resources</h2>
+        </div>
+
+        <p>
+            Property information and imagery used on this website are
+            presented for demonstration and educational purposes.
+        </p>
+
+    </div>
+</section>
+
+
+<!-- FOOTER -->
+
+<footer class="site-footer">
+    <div class="container">
+
+        <p>
+            &copy; 2026 CBD OPS. All rights reserved.
+        </p>
+
+    </div>
+</footer>
+
+
+<!-- JAVASCRIPT -->
+
+<script src="js/script.js"></script>
+
+</body>
+</html>
+
+

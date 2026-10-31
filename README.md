@@ -2,19 +2,19 @@
 
 ## 1. Project Overview
 
-CBD OPS is a modern responsive real estate website designed to help users
-search for, explore and enquire about properties available for sale and rent.
+CBD OPS is a responsive real-estate website designed to help users browse, search and enquire about properties available for sale or rent.
 
-The website provides users with a simple and professional way to browse
-property listings, filter properties according to their requirements,
-view detailed property information and submit property enquiries.
+The website provides a professional and user-friendly platform where visitors can:
 
-CBD OPS focuses on creating an accessible and user-friendly property
-search experience while maintaining a consistent black, white and gold
-visual identity.
+- Browse available properties.
+- Search and filter properties.
+- View detailed property information.
+- View property images and galleries.
+- Submit property enquiries.
+- Contact CBD OPS.
+- Navigate between different sections and pages easily.
 
-The website was developed as a responsive web development project using
-HTML5, CSS3 and JavaScript.
+The website uses a professional black, white and gold visual design to create a modern real-estate brand identity.
 
 ---
 
@@ -22,319 +22,356 @@ HTML5, CSS3 and JavaScript.
 
 The main objectives of CBD OPS are to:
 
-- Provide users with an easy way to browse properties.
+- Provide an easy-to-use property browsing experience.
 - Allow users to search and filter property listings.
-- Provide detailed information for individual properties.
-- Display multiple property images through property galleries.
-- Allow users to submit property enquiries.
-- Provide a responsive experience across desktop, tablet and mobile devices.
-- Use a consistent and professional visual design.
-- Demonstrate practical implementation of HTML, CSS and JavaScript.
-- Improve usability through interactive controls, hover states and
-  keyboard focus states.
+- Display detailed information about individual properties.
+- Provide property enquiry functionality.
+- Provide a contact form for general enquiries.
+- Maintain a responsive design across different screen sizes.
+- Use JavaScript to provide interactive functionality.
+- Apply SEO best practices.
+- Provide clear internal navigation.
+- Deploy the website online using GitHub Pages.
 
 ---
 
-## 3. Main Website Features
+## 3. Website Page Structure
+
+The website consists of the following main pages:
 
 ### Home Page
+`index.html`
 
-The home page provides an introduction to CBD OPS and allows users to
-begin searching for properties.
+The home page introduces CBD OPS and provides:
 
-Features include:
+- Website branding.
+- Navigation.
+- Property search.
+- Featured properties.
+- Calls to action.
+- About CBD OPS preview.
+- Links to property listings and other website sections.
 
-- Website introduction and branding.
-- Property search interface.
-- Featured property listings.
-- Buy and rent options.
-- Property type selection.
-- Navigation to the main website sections.
-- Calls to action directing users towards property searching.
+### Properties Page
+`properties.html`
 
-### Property Listings
+The properties page displays available properties for sale and rent.
 
-The properties page displays available property listings.
+Users can filter properties by:
 
-Users can filter properties according to:
+- Location.
+- Property type.
+- Number of bedrooms.
+- Sale or rental status.
 
-- Location
-- Property type
-- Number of bedrooms
-- Sale or rental status
+Each property listing includes relevant information such as:
 
-Property cards provide important information such as:
+- Property name.
+- Location.
+- Status.
+- Bedrooms.
+- Bathrooms.
+- Garages.
+- Price.
+- Property image.
+- Link to the property details page.
 
-- Property name
-- Location
-- Property status
-- Number of bedrooms
-- Number of bathrooms
-- Garage information
-- Price
-- Property image
-- Link to view additional property information
+### Property Details Page
+`property-details.html`
 
-### Property Details
+The property details page displays detailed information for an individual property.
 
-The property details page provides more information about an individual
-property.
+Information includes:
 
-The page includes:
+- Property title.
+- Status.
+- Location.
+- Property type.
+- Price.
+- Bedrooms.
+- Bathrooms.
+- Garages.
+- Description.
+- Main property image.
+- Property gallery.
+- Enquiry option.
 
-- Property title
-- Property status
-- Location
-- Property type
-- Price
-- Bedrooms
-- Bathrooms
-- Garages
-- Property description
-- Main property image
-- Property image gallery
-- Enquiry button
-- Contact information
+Property information is loaded dynamically using JavaScript and URL parameters.
 
-Property information is dynamically loaded using JavaScript and URL
-parameters.
+### About Page
+`about.html`
 
-### About Us
-
-The About Us page explains the purpose of CBD OPS and provides information
-about the website and its property-search service.
+The About page provides information about CBD OPS, including its organisation, purpose and property services.
 
 ### Contact Page
+`contact.html`
 
-The Contact page allows users to submit property enquiries.
+The Contact page provides CBD OPS contact information and a validated contact form.
 
-The form includes:
+Users can provide:
 
-- Name
-- Email address
-- Phone number
-- Enquiry type
-- Message
-- Submit button
+- Full name.
+- Email address.
+- Phone number.
+- Message type.
+- Message.
 
-Client-side validation is implemented using JavaScript.
+The form provides validation and user feedback after submission.
 
-The contact page also includes a Frequently Asked Questions (FAQ) section.
+### Property Enquiry Page
+`enquiry.html`
 
----
+The enquiry page allows users to submit property-related enquiries.
 
-## 4. Responsive Design
+Users can:
 
-CBD OPS was designed to work across different screen sizes.
+- Select a property.
+- Select an enquiry type.
+- Provide their personal details.
+- Provide a message.
+- Submit the enquiry.
 
-Responsive design techniques include:
-
-- CSS media queries.
-- Flexible containers.
-- Responsive images.
-- Flexible grids.
-- Mobile layout adjustments.
-- Responsive typography.
-- Mobile navigation.
-- Responsive property cards.
-- Responsive property galleries.
-
-The website layout adapts for:
-
-- Desktop screens
-- Tablet screens
-- Mobile screens
-
-The purpose of the responsive design is to maintain usability and
-readability regardless of the user's device.
+JavaScript validation checks the submitted information and displays appropriate error or success messages.
 
 ---
 
-## 5. Interactive Features
+## 4. Technologies Used
 
-JavaScript is used to improve the functionality of CBD OPS.
-
-JavaScript functionality includes:
-
-- Property filtering.
-- Property search.
-- Dynamic property details.
-- URL parameter handling.
-- Contact form validation.
-- Mobile navigation functionality.
-- Property image gallery functionality.
-- User feedback messages for form interaction.
-
-The website also uses CSS interaction states including:
-
-- `:hover`
-- `:focus`
-- `:focus-visible`
-- `:active`
-
-These states provide users with visual feedback when interacting with
-buttons, links and form controls.
-
----
-
-## 6. Accessibility and Usability
-
-Accessibility and usability were considered during development.
-
-The website includes:
-
-- Alternative text for important images.
-- Labels for form controls.
-- Keyboard focus states.
-- Clear navigation.
-- Readable typography.
-- Strong contrast between major text and background areas.
-- Clearly labelled buttons.
-- Responsive layouts for different devices.
-
-Keyboard focus states help users identify the currently selected
-interactive element when navigating without a mouse.
-
----
-
-## 7. Visual Design
-
-CBD OPS uses a black, white and gold colour scheme.
-
-The design was selected to create a modern and professional visual
-identity suitable for a real estate website.
-
-### Black
-
-Used primarily for:
-
-- Header areas
-- Navigation
-- Footer
-- Dark sections
-- Primary text and backgrounds
-
-### White
-
-Used primarily for:
-
-- Page backgrounds
-- Cards
-- Main content areas
-- Text placed against dark backgrounds
-
-### Gold
-
-Used as an accent colour for:
-
-- Buttons
-- Important headings
-- Branding
-- Highlights
-- Interactive elements
-
-The consistent colour system helps maintain visual consistency across
-all website pages.
-
----
-
-## 8. Typography
-
-Google Fonts are used to provide a consistent typographic style.
-
-Typography is used to create a clear hierarchy between:
-
-- Main headings
-- Section headings
-- Paragraph text
-- Navigation
-- Buttons
-- Property information
-
-Responsive typography is implemented so that text remains readable on
-smaller screens.
-
----
-
-## 9. Technologies Used
-
-The following technologies and development tools were used:
+The project was developed using:
 
 - HTML5
 - CSS3
 - JavaScript
 - Google Fonts
-- Visual Studio Code
+- Git
 - GitHub
+- GitHub Pages
+- Visual Studio Code
 - Live Server
 
-### HTML5
+---
 
-Used to create the structure and semantic content of the website.
+## 5. JavaScript Functionality
 
-### CSS3
+JavaScript is used throughout the website to provide interactive functionality.
 
-Used for:
+Implemented functionality includes:
 
-- Layout
-- Colours
-- Typography
-- Spacing
-- Responsive design
-- Animations
-- Hover effects
-- Focus states
-- Media queries
+- Mobile navigation menu.
+- Property searching.
+- Property filtering.
+- Dynamic property details.
+- URL parameter handling.
+- Property image galleries.
+- Contact form validation.
+- Property enquiry form validation.
+- Dynamic form feedback.
+- Property selection on enquiry pages.
+- Search result handling.
+- No-results messaging.
 
-### JavaScript
-
-Used for:
-
-- Property filtering
-- Property searching
-- Dynamic property information
-- Form validation
-- Navigation functionality
-- Interactive website behaviour
-
-### GitHub
-
-Used for:
-
-- Version control
-- Project development
-- Tracking changes
-- Maintaining the project repository
-
-### Live Server
-
-Used to run and test the website locally during development.
+The property details system uses JavaScript to identify the selected property from the URL and display the corresponding information.
 
 ---
 
-## 10. Website Pages
+## 6. SEO Implementation
 
-The website consists of the following main pages:
+SEO improvements were implemented as part of Part 3.
 
-1. **Home** - `index.html`
-2. **Properties** - `properties.html`
-3. **Property Details** - `property-details.html`
-4. **About Us** - `about.html`
-5. **Contact** - `contact.html`
+### Page Titles
+
+Each major page has a unique and descriptive title.
+
+Examples include:
+
+- `CBD OPS | Find Your Dream Property`
+- `Properties | CBD OPS`
+- `Property Details | CBD OPS`
+- `About Us | CBD OPS`
+- `Contact | CBD OPS`
+- `Property Enquiry | CBD OPS`
+
+### Meta Descriptions
+
+Each major page contains a relevant meta description describing its content.
+
+### Heading Structure
+
+The website uses a logical heading hierarchy using:
+
+- H1 for the main page heading.
+- H2 for major sections.
+- H3 for supporting sections and content.
+
+Each main page contains a clear primary H1 heading.
+
+### Image Alt Text
+
+Images were reviewed and descriptive alternative text was added.
+
+Examples include:
+
+- `Modern family home in Durban`
+- `Luxury four bedroom home in Umhlanga`
+- `Contemporary coastal home in Ballito`
+- `Modern city apartment in Durban`
+- `CBD OPS property main image`
+
+This improves accessibility and provides search engines with meaningful information about website images.
+
+### Internal Linking
+
+Internal links were reviewed and improved throughout the website.
+
+The website provides links between:
+
+- Home.
+- Properties.
+- Property Details.
+- About.
+- Contact.
+- Property Enquiry.
+
+Property listings also link directly to their corresponding property details.
+
+### Robots.txt
+
+A `robots.txt` file was created to allow search-engine crawlers to access the website and identify the sitemap.
+
+### Sitemap
+
+A `sitemap.xml` file was created containing the main CBD OPS website pages.
 
 ---
 
-## 11. Project Structure
+## 7. Forms and Validation
+
+### Contact Form
+
+The contact form uses HTML and JavaScript validation.
+
+Validation checks include:
+
+- Required name.
+- Valid email address.
+- Valid phone number.
+- Message type.
+- Required message.
+
+The user receives a meaningful success or error message after attempting to submit the form.
+
+### Property Enquiry Form
+
+The property enquiry form includes:
+
+- Full name.
+- Email address.
+- Phone number.
+- Property selection.
+- Enquiry type.
+- Message.
+
+JavaScript validates the information before processing the form and displays feedback to the user.
+
+---
+
+## 8. Responsive Design
+
+CBD OPS was designed to work across different screen sizes.
+
+Responsive features include:
+
+- Responsive navigation.
+- Mobile menu.
+- Flexible layouts.
+- Responsive property cards.
+- Mobile-friendly forms.
+- Responsive images.
+- Flexible buttons and content sections.
+
+The website was designed to remain usable on desktop, tablet and mobile screen sizes.
+
+---
+
+## 9. Accessibility
+
+Accessibility considerations implemented in the website include:
+
+- Descriptive image alt text.
+- Semantic HTML structure.
+- Clear headings.
+- Form labels.
+- Visible form validation messages.
+- Keyboard-friendly form controls.
+- Clear navigation.
+- Focus states for interactive elements.
+
+---
+
+## 10. Performance and Security Considerations
+
+The website uses a lightweight front-end structure based on HTML, CSS and JavaScript.
+
+Performance considerations include:
+
+- Reusing shared CSS and JavaScript files.
+- Avoiding unnecessary page duplication.
+- Using appropriately sized website images where possible.
+- Keeping the website structure simple and efficient.
+
+Security considerations include:
+
+- Client-side validation for forms.
+- Avoiding the use of sensitive information in front-end code.
+- Using controlled form fields.
+- Avoiding unnecessary external scripts.
+- Maintaining clear separation between HTML, CSS and JavaScript.
+
+---
+
+## 11. Version Control
+
+Git and GitHub were used to manage the project.
+
+The repository contains the project source files and documentation.
+
+Repository:
+
+`https://github.com/Thabiso-Kunene/CBD-OPS`
+
+Git was used to track project changes and maintain different stages of development.
+
+---
+
+## 12. Deployment
+
+CBD OPS was prepared for deployment using GitHub Pages.
+
+Published website:
+
+`https://thabiso-kunene.github.io/CBD-OPS/`
+
+The GitHub repository acts as the source for the deployed website.
+
+GitHub Pages provides free hosting for the static HTML, CSS, JavaScript and image files used by CBD OPS.
+
+---
+
+## 13. Project Structure
 
 ```text
-CBD OPS/
-
+CBD-OPS/
 │
 ├── index.html
 ├── properties.html
 ├── property-details.html
 ├── about.html
 ├── contact.html
+├── enquiry.html
+├── robots.txt
+├── sitemap.xml
+├── README.md
+├── CHANGELOG.md
 │
 ├── css/
 │   └── style.css
@@ -342,9 +379,50 @@ CBD OPS/
 ├── js/
 │   └── script.js
 │
-├── Images/
-│   ├── Logo.png
-│   └── [website property images]
-│
-├── README.md
-└── CHANGELOG.md
+└── Images/
+    ├── Logo.png
+    └── Property images
+```
+
+---
+
+## 14. Testing
+
+The website was tested during development to confirm that:
+
+- Navigation links work.
+- Property filters work.
+- Property details load correctly.
+- Property images display correctly.
+- The property enquiry form validates correctly.
+- The contact form validates correctly.
+- Success and error messages display correctly.
+- Internal links work correctly.
+- Images contain descriptive alt text.
+- Responsive navigation functions correctly.
+- `robots.txt` is present.
+- `sitemap.xml` is present.
+
+---
+
+## 15. Future Improvements
+
+Possible future improvements include:
+
+- Connecting enquiries to a backend database.
+- Sending enquiry notifications by email.
+- Adding user accounts.
+- Adding an advanced property search system.
+- Adding more properties.
+- Adding a property management dashboard.
+- Adding online viewing bookings.
+- Adding database-driven property listings.
+- Improving analytics and reporting.
+
+---
+
+## 16. Conclusion
+
+CBD OPS provides a responsive and professional real-estate website that allows users to browse properties, view property information and communicate with the business.
+
+Part 3 improvements strengthened the website through JavaScript functionality, form validation, SEO optimisation, accessibility improvements, internal linking, sitemap and robots configuration, documentation, version control and deployment preparation.
